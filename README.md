@@ -7,7 +7,7 @@
 
 The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. 
 
-This article is based on the paper: DIFFUSEQ: SEQUENCE TO SEQUENCE TEXT GENERATION WITH DIFFUSION MODELS 
+This article is based on the paper DIFFUSEQ: Sequence To Sequence Text Generation With Diffusion Models
 
 <!-- more -->
 
