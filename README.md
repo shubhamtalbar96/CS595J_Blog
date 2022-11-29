@@ -16,7 +16,9 @@ This article is based on the paper: DIFFUSEQ: SEQUENCE TO SEQUENCE TEXT GENERATI
 
 Paper: <https://arxiv.org/pdf/2210.08933.pdf>
 
-Code: <https://github.com/Shark-NLP/DiffuSeq>
+GitHub: <https://github.com/Shark-NLP/DiffuSeq>
+
+Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation With Diffusion Models*](https://arxiv.org/abs/2210.08933).
 
 
 ## Introduction
