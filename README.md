@@ -1,7 +1,12 @@
 # <img src="img/logo.jpg" width="8%" alt="" align=center /> DiffuSeq
 
+| Tables        | Are           | Cool  |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
 <p align = "center">
----
 TITLE: Sequence To Sequence Text Generation With Diffusion Models
 AUTHOR: Shubham Talbar
 DATE: 2022-10-25
