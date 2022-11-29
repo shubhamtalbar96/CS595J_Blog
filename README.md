@@ -4,8 +4,10 @@
 | --------------------------------------------------------------- |:--------------:| :----------:|:----------:|
 | Sequence To Sequence Text Generation With Diffusion Models      | Shubham Talbar |  2022-10-25 |     NLP    |
 
-<p align = "center">
+<p align = "left">
+  
 The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. This article is based on the paper DIFFUSEQ: Sequence To Sequence Text Generation With Diffusion Models
+
 </p>
   
 <!-- more -->
