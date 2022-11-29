@@ -1,5 +1,6 @@
 # <img src="img/logo.jpg" width="8%" alt="" align=center /> DiffuSeq
 
+<p align = "center">
 ---
 TITLE: Sequence To Sequence Text Generation With Diffusion Models
 AUTHOR: Shubham Talbar
@@ -8,6 +9,7 @@ DATE: 2022-10-25
 CATEGORY:
  - NLP
 ---
+</p>
 
 
 The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. 
