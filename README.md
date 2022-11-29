@@ -30,7 +30,9 @@ Recently, diffusion models have emerged as a new paradigm for generative models.
 <img src="img/diffuseq-process.png" width="95%" alt="" align=center />
 </p>
 
-**The diffusion process of the proposed conditional diffusion language model DiffuSeq**
+<p align = "center">
+<strong>The diffusion process of our conditional diffusion language model DiffuSeq</strong>
+</p>
 
 ## Significant Contributions
 The team’s significant contributions are summarised as follows:
