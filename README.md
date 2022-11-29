@@ -1,23 +1,22 @@
 ---
-title: Language modeling via stochastic processes
-author: Deept Mahendiratta
-date: 2022-10-21
-tag:
+TITLE: Sequence To Sequence Text Generation With Diffusion Models
+AUTHOR: Shubham Talbar
+DATE: 2022-10-25
     
-category:
+CATEGORY:
  - NLP
 ---
 
 
-This blog describes a recent work on the challenge of generating long coherent sequences with language models by leveraging goal-conditioned latent paths.
+The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. 
 
-It is based on the paper: Language modeling via stochastic processes by Wang, R. E., Durmus, E., Goodman, N., & Hashimoto, T. (2022). 
+This article is based on the paper: DIFFUSEQ: SEQUENCE TO SEQUENCE TEXT GENERATION WITH DIFFUSION MODELS 
 
 <!-- more -->
 
-Paper: <https://arxiv.org/abs/2203.11370>
+Paper: <https://arxiv.org/pdf/2210.08933.pdf>
 
-Code: <https://github.com/rosewang2008/language_modeling_via_stochastic_processes>
+Code: <https://github.com/Shark-NLP/DiffuSeq>
 
 
 ## Introduction
