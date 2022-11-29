@@ -21,16 +21,15 @@ Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation Wit
 
 ## Introduction
 
-Writing a few lines is an easy chore for most individuals, but even seasoned authors frequently run into difficulties when trying to construct their second chapter. A similar problem plagues today’s large-scaled pretrained language models, such as GPT-2, which excel at short text production but degrade into incoherence when used for lengthier texts. The incapacity of such models to plan or reflect long-range dynamics might be blamed for the failure to evolve texts from beginning to conclusion correctly.
+Recently, diffusion models have emerged as a new paradigm for generative models. Despite the success in domains using continuous signals such as vision and audio, adapting diffusion models to natural language is difficult due to the discrete nature of text. We tackle this challenge by proposing DiffuSeq: a diffusion model designed for sequence-to-sequence (Seq2Seq) text generation tasks. Upon extensive evaluation over a wide range of Seq2Seq tasks, we find DiffuSeq achieving comparable or even better performance than six established baselines, including a state-of-the-art model that is based on pre-trained language models. Apart from quality, an intriguing property of DiffuSeq is its high diversity during generation, which is desired in many Seq2Seq tasks. We further include a theoretical analysis revealing the connection between DiffuSeq and autoregressive/non-autoregressive models. Bringing together theoretical analysis and empirical evidence, we demonstrate the great potential of diffusion models in complex conditional language generation tasks.
 
-![image2](./image2.png)
+<p align = "center">
+<img src="img/diffuseq-process.png" width="95%" alt="" align=center />
+</p>
 
-Prior work has explored remedies for this failure mode by using planning-based methods or implicitly learning text dynamics. However, these methods manually specify the text dynamics or sacrifice quality in long-horizon generation.
-
-
-To address these challenges, a Stanford University research team introduced Time Control (TC), a language model that implicitly plans using a latent stochastic process and seeks to generate sentences that follow this secret plan. Human assessors scored the outputs 28.6 percent higher than baseline approaches, indicating that the unique strategy enhances performance on long text production.
-
-
+<p align = "center">
+The diffusion process of the proposed conditional diffusion language model DiffuSeq.
+</p>
 
 
 ## Significant Contributions
