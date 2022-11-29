@@ -18,6 +18,7 @@ GitHub: <https://github.com/Shark-NLP/DiffuSeq>
 
 Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation With Diffusion Models*](https://arxiv.org/abs/2210.08933).
 
+&nbsp;
 
 ## Introduction
 
@@ -29,9 +30,7 @@ Recently, diffusion models have emerged as a new paradigm for generative models.
 <img src="img/diffuseq-process.png" width="95%" alt="" align=center />
 </p>
 
-&nbsp;
-
-<align=center> **The diffusion process of the proposed conditional diffusion language model DiffuSeq**
+**The diffusion process of the proposed conditional diffusion language model DiffuSeq**
 
 ## Significant Contributions
 The team’s significant contributions are summarised as follows:
