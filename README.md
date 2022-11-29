@@ -1,25 +1,21 @@
 # <img src="img/logo.jpg" width="8%" alt="" align=center /> DiffuSeq
 
-|                              TITLE                              |     AUTHOR     |     DATE    |  CATEGORY  |
-| --------------------------------------------------------------- |:--------------:| :----------:|:----------:|
-| Sequence To Sequence Text Generation With Diffusion Models      | Shubham Talbar |  2022-10-25 |     NLP    |
-
 <p align="center"></p>
 <table align="center">
     <thead>
         <tr>
-            <th align="left">TITLE</th>
+            <th align="center">TITLE</th>
             <th align="center">AUTHOR</th>
-            <th align="right">DATE</th>
-            <th align="right">CATEGORY</th>
+            <th align="center">DATE</th>
+            <th align="center">CATEGORY</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td align="left">Sequence To Sequence Text Generation With Diffusion Models</td>
+            <td align="center">Sequence To Sequence Text Generation With Diffusion Models</td>
             <td align="center">Shubham Talbar</td>
-            <td align="right">2022-10-28</td>
-            <td align="right">NLP</td>
+            <td align="center">2022-10-28</td>
+            <td align="center">NLP</td>
         </tr>
     </tbody>
 </table>
