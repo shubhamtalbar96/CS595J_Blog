@@ -29,7 +29,7 @@ The following blog is an attempt to simplify and understand the use of Diffusion
 
 Paper: <https://arxiv.org/pdf/2210.08933.pdf>
 
-GitHub: <https://github.com/Shark-NLP/DiffuSeq>
+GitHub Repo: <https://github.com/Shark-NLP/DiffuSeq>
 
 Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation With Diffusion Models*](https://arxiv.org/abs/2210.08933).
 
