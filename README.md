@@ -5,7 +5,7 @@
 | Sequence To Sequence Text Generation With Diffusion Models      | Shubham Talbar |  2022-10-25 |     NLP    |
 
 <p align="center"></p>
-<table>
+<table align="center">
     <thead>
         <tr>
             <th align="left">TITLE</th>
