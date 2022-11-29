@@ -1,3 +1,5 @@
+# <img src="img/logo.jpg" width="8%" alt="" align=center /> DiffuSeq
+
 ---
 TITLE: Sequence To Sequence Text Generation With Diffusion Models
 AUTHOR: Shubham Talbar
