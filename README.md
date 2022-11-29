@@ -22,7 +22,7 @@
 <p></p>
   
 <p align = "left">
-The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. This article is based on the paper DIFFUSEQ: Sequence To Sequence Text Generation With Diffusion Models
+The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. This article is based on the paper <strong>DIFFUSEQ: Sequence To Sequence Text Generation With Diffusion Models</strong>
 </p>
   
 <!-- more -->
