@@ -3,6 +3,25 @@
 |                              TITLE                              |     AUTHOR     |     DATE    |  CATEGORY  |
 | --------------------------------------------------------------- |:--------------:| :----------:|:----------:|
 | Sequence To Sequence Text Generation With Diffusion Models      | Shubham Talbar |  2022-10-25 |     NLP    |
+
+<p align="center"></p>
+<table>
+    <thead>
+        <tr>
+            <th align="left">Column1</th>
+            <th align="center">Column1</th>
+            <th align="right">Column1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td align="left">Column1</td>
+            <td align="center">Column1</td>
+            <td align="right">Column1</td>
+        </tr>
+    </tbody>
+</table>
+<p></p>
   
 <p align = "left">
 The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. This article is based on the paper DIFFUSEQ: Sequence To Sequence Text Generation With Diffusion Models
