@@ -8,16 +8,18 @@
 <table>
     <thead>
         <tr>
-            <th align="left">Column1</th>
-            <th align="center">Column1</th>
-            <th align="right">Column1</th>
+            <th align="left">TITLE</th>
+            <th align="center">AUTHOR</th>
+            <th align="right">DATE</th>
+            <th align="right">CATEGORY</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td align="left">Column1</td>
-            <td align="center">Column1</td>
-            <td align="right">Column1</td>
+            <td align="left">Sequence To Sequence Text Generation With Diffusion Models</td>
+            <td align="center">Shubham Talbar</td>
+            <td align="right">2022-10-28</td>
+            <td align="right">NLP</td>
         </tr>
     </tbody>
 </table>
