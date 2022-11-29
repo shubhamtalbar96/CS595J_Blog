@@ -52,12 +52,24 @@ Recently, diffusion models have emerged as a new paradigm for generative models.
 &nbsp;
 
 ## Significant Contributions
-The team’s significant contributions are summarised as follows:
 
-1. Time Control is a language model derived by the team that explicitly represents latent structure using Brownian bridge dynamics acquired with a new contrastive aim.
-2. Compared to task-specific approaches, the team showed that Time Control creates more or equally coherent text on tasks such as text infilling and forced lengthy text production across various text domains.
-3. By evaluating discourse coherence with human studies, The team demonstrates that their latent representations capture text dynamics competitively.
-4. The relevance of the contrastive aim, enforcing Brownian bridge dynamics, and explicitly modeling latent dynamics are all emphasized in their technique.
+- The proposed __*DiffuSeq*__ as a conditional language model is trained end-to-end in a classifier-free manner.
+- The authors have established a theoretical
+connection among AR, NAR and __*DiffuSeq*__ models (refer to the original paper).
+- __*DiffuSeq*__ is a powerful model for text
+generation, matching or even surpassing competitive AR, iterative NAR,
+and large-PLMs on quality and diversity.
+
+The study addresses promising achievements by such a new
+sequence-to-sequence learning paradigm.
+
+<p align = "center">
+<img src="img/result-1.png" width="80%" alt="" align=center />
+</p>
+<p align = "center">
+<img src="img/result-2.png" width=80%" alt="" align=center />
+</p>
+
 
 ## Method
 
