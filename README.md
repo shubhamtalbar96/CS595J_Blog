@@ -1,13 +1,13 @@
 # <img src="img/logo.jpg" width="8%" alt="" align=center /> DiffuSeq
 
+<div align="center">
 |                              TITLE                              |     AUTHOR     |     DATE    |  CATEGORY  |
 | --------------------------------------------------------------- |:--------------:| :----------:|:----------:|
 | Sequence To Sequence Text Generation With Diffusion Models      | Shubham Talbar |  2022-10-25 |     NLP    |
-
-<p align = "left">
+</div>
   
+<p align = "left">
 The following blog is an attempt to simplify and understand the use of Diffusion Models in complex conditional language generation tasks. This article is based on the paper DIFFUSEQ: Sequence To Sequence Text Generation With Diffusion Models
-
 </p>
   
 <!-- more -->
@@ -33,6 +33,8 @@ Recently, diffusion models have emerged as a new paradigm for generative models.
 <p align = "center">
 <strong>The diffusion process of our conditional diffusion language model DiffuSeq</strong>
 </p>
+
+&nbsp;
 
 ## Significant Contributions
 The team’s significant contributions are summarised as follows:
