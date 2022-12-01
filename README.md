@@ -104,7 +104,23 @@ To establish the effectiveness of **DiffuSeq**, the authors conduct experiments 
 
 The authors conduct experiments to validate the effectiveness of DIFFUSEQ on four different tasks, against six strong AR/NAR baselines. 
 
-**Tasks and Datasets**
+**Tasks and Datasets.** SEQ2SEQ generation covers a wide range of tasks, among which four typical and popular tasks were chosen, listed as follows. **Open domain dialogue** requires models to generate informative responses given a dialogue context. The authors used Commonsense Conversation Dataset (Zhou
+et al., 2018), which is extracted from Reddit single-round dialogs, with over 3 million conversational pairs. **Question generation(QG)** aims to generate questions given a context as input. To obtain sufficient training samples, the authors used the dataset Quasar-T (Dhingra et al., 2017) preprocessed by Lin et al. (2018), and then generate document-question pairs to obtain 119K training samples in the end. **Text simplification** aims to revise the complex text into sequences with simplified grammar and word choice. Jiang et al. (2020) constructs a corpus consisting of 666K complex-simple sentences with revision alignment. Paraphrase task generates an alternative surface form in the same language expressing the same semantic content. We adopt widely used Quora Question Pairs3 (QQP) sourced from the community question answering forum Quora, with 147K positive pairs.
+
+**Baselines.** The authors considered three groups of models as baselines, covering both AR and NAR architectures. The first group of methods adopts encoder-decoder architecture (Cho et al., 2014) which is well-studied for SEQ2SEQ tasks, and we conduct experiments on two popular models: GRU with attention and Transformer (Vaswani et al., 2017). The second group is the finetuned large pre-trained language model (PLM), among which GPT2 (Radford et al., 2019) has demonstrated great success in almost all SEQ2SEQ tasks. We further compare to GPVAE (Du et al., 2022), which augments a pre-trained T5 (Raffel et al., 2020) with VAE to improve the generation diversity. For the last group of baselines, we consider LevT (Gu et al., 2019), a widely used, strong iterative NAR model.
+
+&nbsp;
+
+<p align = "center">
+<img src="img/Table.png" width="95%" alt="" align=center />
+</p>
+
+<p align = "center">
+<strong>The overall results of different methods on different SEQ2SEQ tasks. The first group of methods adopt autoregressive encoder-decoder architecture and the second group is the finetuned large pre-trained language model (also in autoregressive manner) while the last group is non-autoregressive. The best results are bold, and the best results without PLMs are underlined.</strong>
+</p>
+
+&nbsp;
+
 
 ## Significant Contributions
 
