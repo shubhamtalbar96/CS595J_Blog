@@ -59,6 +59,27 @@ Diffusion models are inspired by non-equilibrium thermodynamics. They define a m
 
 &nbsp;
 
+The key concept in Diffusion Modelling is that if we could build a learning model which can learn the systematic decay of information due to noise, then it should be possible to reverse the process and therefore, recover the information back from the noise. This concept is similar to VAEs in the way that it tries to optimize an objective function by first projecting the data onto the latent space and then recovering it back to the initial state. However, instead of learning the data distribution, the system aims to model a series of noise distributions in a Markov Chain and “decodes” the data by undoing/denoising the data in a hierarchical fashion.
+
+&nbsp;
+
+## Denoising Diffusion Models
+
+The idea of denoising diffusion model has been around for a long time. It has its roots in Diffusion Maps concept which is one of the dimensionality reduction techniques used in Machine Learning literature. It also borrows concepts from the probabilistic methods such as Markov Chains which has been used in many applications. The original Denoising Diffusion method was proposed in Sohl-Dickstein et al. A denoising diffusion modeling is a two step process: the forward diffusion process and the reverse process or the reconstruction. In the forward diffusion process, gaussian noise is introduced successively until the data becomes all noise. The reverse reconstruction process undoes the noise by learning the conditional probability densities using a neural network model. An example depiction of such a process can be visualized below.
+
+
+&nbsp;
+
+<p align = "center">
+<img src="img/reconstruction.webp" width="95%" alt="" align=center />
+</p>
+
+<p align = "center">
+<strong>Process of Denoising Diffusion Probabilistic Model</strong>
+</p>
+
+&nbsp;
+
 ## Why DiffuSeq?
 
 SEQ2SEQ is an essential setting in NLP that covers a wide range of important tasks such as open-ended sentence generation, dialogue, paraphrasing, and text style transfer. This paper proposes **DiffuSeq**, a classifier-free diffusion model that supports SEQ2SEQ text generation tasks. By modeling the conditional probability of the target sentence **w** given context **x** using one single model, one advantage of DIFFUSEQ is that this paradigm allows a complete model to fit data distribution and utilize conditional guidance, rather than depending on a separate classifier.
