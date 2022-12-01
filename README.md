@@ -28,7 +28,9 @@ The following blog is an attempt to simplify and understand the use of Diffusion
 <!-- more -->
 
 Paper: <https://arxiv.org/pdf/2210.08933.pdf>
+
 GitHub Repo: <https://github.com/Shark-NLP/DiffuSeq>
+
 Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation With Diffusion Models*](https://arxiv.org/abs/2210.08933).
 
 &nbsp;
@@ -36,6 +38,8 @@ Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation Wit
 ## What problem does the paper solve?
 
 Diffusion Models have recently emerged as a new paradigm for generative models. These models have had success in domains using continuous signals such as vision and audio. But adapting diffusion models to natural language is difficult due to the discrete non-continuous nature of text. This paper tries to tackle this task by proposing **DiffuSeq** which is a diffusion model designed for sequence-to-sequence text generation tasks. The authors evaluate the performance of **DiffuSeq** over a wide variety of SeqToSeq tasks and reported that it infact performed better than those and a state-of-the-art model based on pre-trained language models.
+
+&nbsp;
 
 ## What are diffusion models?
 
@@ -51,6 +55,7 @@ Diffusion models are inspired by non-equilibrium thermodynamics. They define a m
 <strong>Overview of different types of generative models</strong>
 </p>
 
+&nbsp;
 
 ## Why DiffuSeq?
 
