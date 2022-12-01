@@ -100,6 +100,12 @@ To establish the effectiveness of **DiffuSeq**, the authors conduct experiments 
 
 &nbsp;
 
+## Experiments
+
+The authors conduct experiments to validate the effectiveness of DIFFUSEQ on four different tasks, against six strong AR/NAR baselines. 
+
+**Tasks and Datasets**
+
 ## Significant Contributions
 
 - The proposed __*DiffuSeq*__ as a conditional language model is trained end-to-end in a classifier-free manner.
