@@ -47,6 +47,8 @@ Existing generative models such as Generative Adversarial Networks (Goodfellow e
 
 Diffusion models are inspired by non-equilibrium thermodynamics. They define a markov chain of diffusion steps to slowly add random noise to data and then learn to reverse the diffusion process to construct desired data samples from the noise. Unlike VAE or flow models, diffusion models are learned with a fixed procedure and the latent variable has high dimensionality (same as original data). 
 
+&nbsp;
+
 <p align = "center">
 <img src="img/diffusionExample.png" width="95%" alt="" align=center />
 </p>
