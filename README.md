@@ -80,9 +80,11 @@ The idea of denoising diffusion model has been around for a long time. It has it
 
 &nbsp;
 
-## Why DiffuSeq?
+## Why and What is DiffuSeq?
 
-SEQ2SEQ is an essential setting in NLP that covers a wide range of important tasks such as open-ended sentence generation, dialogue, paraphrasing, and text style transfer. This paper proposes **DiffuSeq**, a classifier-free diffusion model that supports SEQ2SEQ text generation tasks. By modeling the conditional probability of the target sentence **w** given context **x** using one single model, one advantage of DIFFUSEQ is that this paradigm allows a complete model to fit data distribution and utilize conditional guidance, rather than depending on a separate classifier.
+DiffuSeq is an extended vanilla diffusion model to learn conditional text generation, concerning the model architecture and the training objective. 
+
+SEQ2SEQ is an essential setting in NLP that covers a wide range of important tasks such as open-ended sentence generation, dialogue, paraphrasing, and text style transfer. This paper proposes **DiffuSeq**, a classifier-free **diffusion model** that supports SEQ2SEQ text generation tasks. By modeling the conditional probability of the target sentence **w** given context **x** using one single model, one advantage of DIFFUSEQ is that this paradigm allows a complete model to fit data distribution and utilize conditional guidance, rather than depending on a separate classifier.
 
 To establish the effectiveness of **DiffuSeq**, the authors conduct experiments on four SEQ2SEQ tasks. Compared to autoregressive (AR) and non-autoregressive (NAR) models, which suffer from the “degeneration” problem (Holtzman et al., 2019) and rely on decoding strategies, DIFFUSEQ can achieve considerable sentence-level diversity without sacrificing the quality.
 
@@ -98,17 +100,35 @@ To establish the effectiveness of **DiffuSeq**, the authors conduct experiments 
 
 &nbsp;
 
+## Experiments
+
+The authors conduct experiments to validate the effectiveness of DIFFUSEQ on four different tasks, against six strong AR/NAR baselines. 
+
+**Tasks and Datasets.** SEQ2SEQ generation covers a wide range of tasks, among which four typical and popular tasks were chosen, listed as follows. **Open domain dialogue** requires models to generate informative responses given a dialogue context. The authors used Commonsense Conversation Dataset (Zhou
+et al., 2018), which is extracted from Reddit single-round dialogs, with over 3 million conversational pairs. **Question generation(QG)** aims to generate questions given a context as input. To obtain sufficient training samples, the authors used the dataset Quasar-T (Dhingra et al., 2017) preprocessed by Lin et al. (2018), and then generate document-question pairs to obtain 119K training samples in the end. **Text simplification** aims to revise the complex text into sequences with simplified grammar and word choice. Jiang et al. (2020) constructs a corpus consisting of 666K complex-simple sentences with revision alignment. Paraphrase task generates an alternative surface form in the same language expressing the same semantic content. We adopt widely used Quora Question Pairs3 (QQP) sourced from the community question answering forum Quora, with 147K positive pairs.
+
+**Baselines.** The authors considered three groups of models as baselines, covering both AR and NAR architectures. The first group of methods adopts encoder-decoder architecture (Cho et al., 2014) which is well-studied for SEQ2SEQ tasks, and we conduct experiments on two popular models: GRU with attention and Transformer (Vaswani et al., 2017). The second group is the finetuned large pre-trained language model (PLM), among which GPT2 (Radford et al., 2019) has demonstrated great success in almost all SEQ2SEQ tasks. We further compare to GPVAE (Du et al., 2022), which augments a pre-trained T5 (Raffel et al., 2020) with VAE to improve the generation diversity. For the last group of baselines, we consider LevT (Gu et al., 2019), a widely used, strong iterative NAR model.
+
+&nbsp;
+
+<p align = "center">
+<img src="img/Table.png" width="95%" alt="" align=center />
+</p>
+
+<p align = "center">
+<strong>The overall results of different methods on different SEQ2SEQ tasks. The first group of methods adopt autoregressive encoder-decoder architecture and the second group is the finetuned large pre-trained language model (also in autoregressive manner) while the last group is non-autoregressive. The best results are bold, and the best results without PLMs are underlined.</strong>
+</p>
+
+&nbsp;
+
+
 ## Significant Contributions
 
 - The proposed __*DiffuSeq*__ as a conditional language model is trained end-to-end in a classifier-free manner.
-- The authors have established a theoretical
-connection among AR, NAR and __*DiffuSeq*__ models (refer to the original paper).
-- __*DiffuSeq*__ is a powerful model for text
-generation, matching or even surpassing competitive AR, iterative NAR,
-and large-PLMs on quality and diversity.
+- The authors have established a theoretical connection among AR, NAR and __*DiffuSeq*__ models (refer to the original paper).
+- __*DiffuSeq*__ is a powerful model for text generation, matching or even surpassing competitive AR, iterative NAR, and large-PLMs on quality and diversity.
 
-The study addresses promising achievements by such a new
-sequence-to-sequence learning paradigm.
+The study addresses promising achievements by such a new sequence-to-sequence learning paradigm.
 
 <p align = "center">
 <img src="img/result-1.png" width="80%" alt="" align=center />
@@ -119,34 +139,16 @@ sequence-to-sequence learning paradigm.
 
 &nbsp;
 
-## Method
+## Conclusion
+Important questions addressed in this blog:
 
-The proposed TC approach learns a latent space with smooth temporal dynamics for modeling and creating coherent text. The researchers devised a unique contrastive goal for learning a latent space with Brownian bridge dynamics and then utilized this latent space to create text that keeps local coherence while displaying better global coherence.
+1. What problem does the paper solve specifically?
+2. What are diffusion models?
+3. What are forward and reverse process in Diffusion Models?
+4. Why and how is DiffuSeq effective?
 
-The TC text generation pipeline uses the Brownian bridge process to plan a latent trajectory with a start and finish, then conditionally creates sentences that follow this latent plan.
-
-The intuition is simple: The bridge imposes that a positive triplet (eg. three in-order sentences on Boston) makes up a smooth trajectory. A negative triplet should not construct a smooth trajectory (switching middle sentences with one on New York).
-
-After training the encoder, GPT2 is finetuned to decode from past context and the encoded latent plan. At inference, a latent plan is generated by sampling from the bridge and conditionally generating each sentence using the latent plan.
-
-
-&nbsp;
-
-## Discussion and Conclusion
-Four questions were addressed in the team’s empirical study:
-
-1. Is it possible to represent local text dynamics using Time Control?
-2. Is it possible for Time Control to create locally coherent language?
-3. Is it possible to represent global text dynamics using Time Control?
-4. Is Time Control capable of producing long, cohesive documents?
-
-For three tasks: discourse coherence, text-infilling, document structure imitating, and extended text production, they compared TC to domain-specific approaches and fine-tuning on GPT-2 across diverse text domains. Wiki section, TM-2, TicketTalk, and Recipe NLG were among the datasets used in the tests.
-
-
-TC didn’t sacrifice short/mid-range language modeling performance as it improved performance on text infilling and discourse coherence tasks in the tests while preserving text structure for long text generation in terms of ordering (up to +40%) and text length consistency (up to +17%); this demonstrates the proposed method’s ability to generate more locally and globally coherent texts.
-
-According to the team, TC may expand to other domains containing sequential data, such as movies or music, and support arbitrary bridge operations with unknown fixed start and endpoints.
-
+DIFFUSEQ tackles SEQ2SEQ tasks in a diffusion way, which contains the strong potential to achieve better generation quality and diversity trade-off. In other words, DIFFUSEQ is capable of producing highly diverse sentences without sacrificing much of the quality. The capability enables favorable characteristics of DIFFUSEQ to further enhance the quality of final results, by leveraging a minimum Bayes risk decoding algorithm. Besides, the author prove theoretically that DiffuSeq model is a powerful extension of iterativeNAR model. The empirical results demonstrate that DIFFUSEQ is also a powerful model for text generation, matching or even surpassing competitive autoregressive, iterative non-autoregressive, and large-scale pre-trained models on quality and diversity. Given the limited progress of current diffusion models on text generation, our study addresses promising achievements by such a new sequence-to-sequence learning paradigm.
+                                             
 &nbsp;
                                              
 ## Reference 
@@ -159,3 +161,30 @@ According to the team, TC may expand to other domains containing sequential data
   year={2022}
 }
 ```
+
+```
+@article{diffusionrafideasy,
+    title   = "Diffusion Models Made Easy",
+    author  = "J. Rafid Siddiqui",
+    journal = "[lilianweng.github.io](https://azad-wolf.medium.com/)",
+    year    = "2022",
+    month   = "May",
+    url     = "https://towardsdatascience.com/diffusion-models-made-easy-8414298ce4da"
+}                                            
+```                                          
+
+```
+@article{weng2021diffusion,
+    title   = "What are diffusion models?",
+    author  = "Weng, Lilian",
+    journal = "lilianweng.github.io",
+    year    = "2021",
+    month   = "Jul",
+    url     = "https://lilianweng.github.io/posts/2021-07-11-diffusion-models/"
+}                                            
+```
+                                                                               
+                                                                               
+                                             
+                                             
+                                             
