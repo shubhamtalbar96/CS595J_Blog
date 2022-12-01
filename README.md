@@ -80,9 +80,11 @@ The idea of denoising diffusion model has been around for a long time. It has it
 
 &nbsp;
 
-## Why DiffuSeq?
+## Why and What is DiffuSeq?
 
-SEQ2SEQ is an essential setting in NLP that covers a wide range of important tasks such as open-ended sentence generation, dialogue, paraphrasing, and text style transfer. This paper proposes **DiffuSeq**, a classifier-free diffusion model that supports SEQ2SEQ text generation tasks. By modeling the conditional probability of the target sentence **w** given context **x** using one single model, one advantage of DIFFUSEQ is that this paradigm allows a complete model to fit data distribution and utilize conditional guidance, rather than depending on a separate classifier.
+DiffuSeq is an extended vanilla diffusion model to learn conditional text generation, concerning the model architecture and the training objective. 
+
+SEQ2SEQ is an essential setting in NLP that covers a wide range of important tasks such as open-ended sentence generation, dialogue, paraphrasing, and text style transfer. This paper proposes **DiffuSeq**, a classifier-free **diffusion model** that supports SEQ2SEQ text generation tasks. By modeling the conditional probability of the target sentence **w** given context **x** using one single model, one advantage of DIFFUSEQ is that this paradigm allows a complete model to fit data distribution and utilize conditional guidance, rather than depending on a separate classifier.
 
 To establish the effectiveness of **DiffuSeq**, the authors conduct experiments on four SEQ2SEQ tasks. Compared to autoregressive (AR) and non-autoregressive (NAR) models, which suffer from the “degeneration” problem (Holtzman et al., 2019) and rely on decoding strategies, DIFFUSEQ can achieve considerable sentence-level diversity without sacrificing the quality.
 
@@ -159,3 +161,17 @@ According to the team, TC may expand to other domains containing sequential data
   year={2022}
 }
 ```
+
+```
+@article{weng2021diffusion,
+    title   = "What are diffusion models?",
+    author  = "Weng, Lilian",
+    journal = "lilianweng.github.io",
+    year    = "2021",
+    month   = "Jul",
+    url     = "https://lilianweng.github.io/posts/2021-07-11-diffusion-models/"
+}                                            
+```
+                                             
+                                             
+                                             
