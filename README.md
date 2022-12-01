@@ -103,14 +103,10 @@ To establish the effectiveness of **DiffuSeq**, the authors conduct experiments 
 ## Significant Contributions
 
 - The proposed __*DiffuSeq*__ as a conditional language model is trained end-to-end in a classifier-free manner.
-- The authors have established a theoretical
-connection among AR, NAR and __*DiffuSeq*__ models (refer to the original paper).
-- __*DiffuSeq*__ is a powerful model for text
-generation, matching or even surpassing competitive AR, iterative NAR,
-and large-PLMs on quality and diversity.
+- The authors have established a theoretical connection among AR, NAR and __*DiffuSeq*__ models (refer to the original paper).
+- __*DiffuSeq*__ is a powerful model for text generation, matching or even surpassing competitive AR, iterative NAR, and large-PLMs on quality and diversity.
 
-The study addresses promising achievements by such a new
-sequence-to-sequence learning paradigm.
+The study addresses promising achievements by such a new sequence-to-sequence learning paradigm.
 
 <p align = "center">
 <img src="img/result-1.png" width="80%" alt="" align=center />
@@ -122,20 +118,15 @@ sequence-to-sequence learning paradigm.
 &nbsp;
 
 ## Conclusion
-Four questions were addressed in the team’s empirical study:
+Important questions addressed in this blog:
 
-1. Is it possible to represent local text dynamics using Time Control?
-2. Is it possible for Time Control to create locally coherent language?
-3. Is it possible to represent global text dynamics using Time Control?
-4. Is Time Control capable of producing long, cohesive documents?
+1. What problem does the paper solve specifically?
+2. What are diffusion models?
+3. What are forward and reverse process in Diffusion Models?
+4. Why and how is DiffuSeq effective?
 
-For three tasks: discourse coherence, text-infilling, document structure imitating, and extended text production, they compared TC to domain-specific approaches and fine-tuning on GPT-2 across diverse text domains. Wiki section, TM-2, TicketTalk, and Recipe NLG were among the datasets used in the tests.
-
-
-TC didn’t sacrifice short/mid-range language modeling performance as it improved performance on text infilling and discourse coherence tasks in the tests while preserving text structure for long text generation in terms of ordering (up to +40%) and text length consistency (up to +17%); this demonstrates the proposed method’s ability to generate more locally and globally coherent texts.
-
-According to the team, TC may expand to other domains containing sequential data, such as movies or music, and support arbitrary bridge operations with unknown fixed start and endpoints.
-
+DIFFUSEQ tackles SEQ2SEQ tasks in a diffusion way, which contains the strong potential to achieve better generation quality and diversity trade-off. In other words, DIFFUSEQ is capable of producing highly diverse sentences without sacrificing much of the quality. The capability enables favorable characteristics of DIFFUSEQ to further enhance the quality of final results, by leveraging a minimum Bayes risk decoding algorithm. Besides, the author prove theoretically that DiffuSeq model is a powerful extension of iterativeNAR model. The empirical results demonstrate that DIFFUSEQ is also a powerful model for text generation, matching or even surpassing competitive autoregressive, iterative non-autoregressive, and large-scale pre-trained models on quality and diversity. Given the limited progress of current diffusion models on text generation, our study addresses promising achievements by such a new sequence-to-sequence learning paradigm.
+                                             
 &nbsp;
                                              
 ## Reference 
@@ -150,7 +141,7 @@ According to the team, TC may expand to other domains containing sequential data
 ```
 
 ```
-@article{weng2021diffusion,
+@article{diffusionrafideasy,
     title   = "Diffusion Models Made Easy",
     author  = "J. Rafid Siddiqui",
     journal = "[lilianweng.github.io](https://azad-wolf.medium.com/)",
