@@ -28,7 +28,9 @@ The following blog is an attempt to simplify and understand the use of Diffusion
 <!-- more -->
 
 Paper: <https://arxiv.org/pdf/2210.08933.pdf>
+
 GitHub Repo: <https://github.com/Shark-NLP/DiffuSeq>
+
 Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation With Diffusion Models*](https://arxiv.org/abs/2210.08933).
 
 &nbsp;
@@ -37,11 +39,15 @@ Official Codebase for [*__*DiffuSeq*__: Sequence to Sequence Text Generation Wit
 
 Diffusion Models have recently emerged as a new paradigm for generative models. These models have had success in domains using continuous signals such as vision and audio. But adapting diffusion models to natural language is difficult due to the discrete non-continuous nature of text. This paper tries to tackle this task by proposing **DiffuSeq** which is a diffusion model designed for sequence-to-sequence text generation tasks. The authors evaluate the performance of **DiffuSeq** over a wide variety of SeqToSeq tasks and reported that it infact performed better than those and a state-of-the-art model based on pre-trained language models.
 
+&nbsp;
+
 ## What are diffusion models?
 
 Existing generative models such as Generative Adversarial Networks (Goodfellow et al., 2014), Variational Auto Encoders (Kingma & Welling, 2014) and Flow-based models (Dinh et al., 2017) have shown great success in generating high-quality samples, but each has some limitation of its own. GAN models are known for potentially unstable training and less diversity in generation due to their adversarial training nature. VAE relies on a surrogate loss. Flow models have to use specialized architectures to construct reversible transform.   
 
 Diffusion models are inspired by non-equilibrium thermodynamics. They define a markov chain of diffusion steps to slowly add random noise to data and then learn to reverse the diffusion process to construct desired data samples from the noise. Unlike VAE or flow models, diffusion models are learned with a fixed procedure and the latent variable has high dimensionality (same as original data). 
+
+&nbsp;
 
 <p align = "center">
 <img src="img/diffusionExample.png" width="95%" alt="" align=center />
@@ -51,6 +57,28 @@ Diffusion models are inspired by non-equilibrium thermodynamics. They define a m
 <strong>Overview of different types of generative models</strong>
 </p>
 
+&nbsp;
+
+The key concept in Diffusion Modelling is that if we could build a learning model which can learn the systematic decay of information due to noise, then it should be possible to reverse the process and therefore, recover the information back from the noise. This concept is similar to VAEs in the way that it tries to optimize an objective function by first projecting the data onto the latent space and then recovering it back to the initial state. However, instead of learning the data distribution, the system aims to model a series of noise distributions in a Markov Chain and “decodes” the data by undoing/denoising the data in a hierarchical fashion.
+
+&nbsp;
+
+## Denoising Diffusion Models
+
+The idea of denoising diffusion model has been around for a long time. It has its roots in Diffusion Maps concept which is one of the dimensionality reduction techniques used in Machine Learning literature. It also borrows concepts from the probabilistic methods such as Markov Chains which has been used in many applications. The original Denoising Diffusion method was proposed in Sohl-Dickstein et al. A denoising diffusion modeling is a two step process: the forward diffusion process and the reverse process or the reconstruction. In the forward diffusion process, gaussian noise is introduced successively until the data becomes all noise. The reverse reconstruction process undoes the noise by learning the conditional probability densities using a neural network model. An example depiction of such a process can be visualized below.
+
+
+&nbsp;
+
+<p align = "center">
+<img src="img/reconstruction.webp" width="95%" alt="" align=center />
+</p>
+
+<p align = "center">
+<strong>Process of Denoising Diffusion Probabilistic Model</strong>
+</p>
+
+&nbsp;
 
 ## Why DiffuSeq?
 
