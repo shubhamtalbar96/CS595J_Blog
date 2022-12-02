@@ -43,9 +43,11 @@ Diffusion Models have recently emerged as a new paradigm for generative models. 
 
 ## What are diffusion models?
 
-Existing generative models such as Generative Adversarial Networks (Goodfellow et al., 2014), Variational Auto Encoders (Kingma & Welling, 2014) and Flow-based models (Dinh et al., 2017) have shown great success in generating high-quality samples, but each has some limitation of its own. GAN models are known for potentially unstable training and less diversity in generation due to their adversarial training nature. VAE relies on a surrogate loss. Flow models have to use specialized architectures to construct reversible transform.   
+In machine learning, diffusion models, also known as diffusion probabilistic models, are a class of latent variable models. Diffusion models were introduced in 2015 with a motivation from non-equilibrium thermodynamics. These models are Markov chains trained using variational inference. The goal of diffusion models is to learn the latent structure of a dataset by modeling the way in which data points diffuse through the latent space. In computer vision, this means that a neural network is trained to denoise images blurred with Gaussian noise by learning to reverse the diffusion process. Existing generative models such as Generative Adversarial Networks (Goodfellow et al., 2014), Variational Auto Encoders (Kingma & Welling, 2014) and Flow-based models (Dinh et al., 2017) have shown great success in generating high-quality samples, but each has some limitation of its own. GAN models are known for potentially unstable training and less diversity in generation due to their adversarial training nature. VAE relies on a surrogate loss. Flow models have to use specialized architectures to construct reversible transform.   
 
 Diffusion models are inspired by non-equilibrium thermodynamics. They define a markov chain of diffusion steps to slowly add random noise to data and then learn to reverse the diffusion process to construct desired data samples from the noise. Unlike VAE or flow models, diffusion models are learned with a fixed procedure and the latent variable has high dimensionality (same as original data). 
+
+Diffusion models can be applied to a variety of tasks, including image denoising, inpainting, super-resolution, and image generation. For example, an image generation model would start with a random noise image and then, after having been trained reversing the diffusion process on natural images, the model would be able to generate new natural images. Announced on 13 April 2022, OpenAI's text-to-image model DALL-E 2 is a recent example. It uses diffusion models for both the model's prior (which produces an image embedding given a text caption) and the decoder that generates the final image.
 
 &nbsp;
 
@@ -108,6 +110,8 @@ The authors conduct experiments to validate the effectiveness of DIFFUSEQ on fou
 et al., 2018), which is extracted from Reddit single-round dialogs, with over 3 million conversational pairs. **Question generation(QG)** aims to generate questions given a context as input. To obtain sufficient training samples, the authors used the dataset Quasar-T (Dhingra et al., 2017) preprocessed by Lin et al. (2018), and then generate document-question pairs to obtain 119K training samples in the end. **Text simplification** aims to revise the complex text into sequences with simplified grammar and word choice. Jiang et al. (2020) constructs a corpus consisting of 666K complex-simple sentences with revision alignment. Paraphrase task generates an alternative surface form in the same language expressing the same semantic content. We adopt widely used Quora Question Pairs3 (QQP) sourced from the community question answering forum Quora, with 147K positive pairs.
 
 **Baselines.** The authors considered three groups of models as baselines, covering both AR and NAR architectures. The first group of methods adopts encoder-decoder architecture (Cho et al., 2014) which is well-studied for SEQ2SEQ tasks, and we conduct experiments on two popular models: GRU with attention and Transformer (Vaswani et al., 2017). The second group is the finetuned large pre-trained language model (PLM), among which GPT2 (Radford et al., 2019) has demonstrated great success in almost all SEQ2SEQ tasks. We further compare to GPVAE (Du et al., 2022), which augments a pre-trained T5 (Raffel et al., 2020) with VAE to improve the generation diversity. For the last group of baselines, we consider LevT (Gu et al., 2019), a widely used, strong iterative NAR model.
+
+**Evaluation.** The authors evaluate the generated sequences from two aspects: quality and diversity. To evaluate the quality, they used the standard metric BLEU (Papineni et al., 2002) and ROUGE (Lin, 2004) score. Since string-similarity-based metrics can be unsatisfactory for open-ended generation, they also report BERTScore (Zhang et al., 2019) that assesses the semantic similarity between generated sentences and references. Higher scores of BLEU, ROUGE and BERTScore reflect better performance. As for diversity, they used distinct unigram (dist-1) to measure intra-diversity within each generated sentence, where the lower dist-1 indicates that the generated sentence contains more repeated words. For sentence-level diversity evaluation, they consider sentence-level self-BLEU (Zhu et al., 2018) to measure the n-gram overlap between the set of outputs w.r.t one source sentence, and we additionally use diverse 4-gram (div-4) (Deshpande et al., 2019) to measure the ratio of distinct 4-grams in the set of outputs per source sentence. The lower self-BLEU and higher div-4 suggest higher diversity of generation. For each method including DIFFUSEQ, they generate 3 samples for each source sentence to compute the diversity metrics.
 
 &nbsp;
 
@@ -183,7 +187,14 @@ DIFFUSEQ tackles SEQ2SEQ tasks in a diffusion way, which contains the strong pot
     url     = "https://lilianweng.github.io/posts/2021-07-11-diffusion-models/"
 }                                            
 ```
-                                                                               
+
+```
+https://en.wikipedia.org/wiki/Diffusion_model
+```
+
+```
+https://theaisummer.com/diffusion-models/#diffusion-process
+```                                                                            
                                                                                
                                              
                                              
